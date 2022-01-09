@@ -7,9 +7,17 @@
 
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.vaithidroid.appone.how2cook.ui.fragments.RecipeFragment"
+        android:name="com.vaithidroid.appone.how2cook.ui.fragments.recipe.RecipeFragment"
         android:label="Recipe"
-        tools:layout="@layout/fragment_recipe" />
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+        <argument
+            android:name="backFromBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFoodFragment"
         android:name="com.vaithidroid.appone.how2cook.ui.fragments.FavoriteFoodFragment"
@@ -20,4 +28,13 @@
         android:name="com.vaithidroid.appone.how2cook.ui.fragments.FoodJokesFragment"
         android:label="Jokes"
         tools:layout="@layout/fragment_food_jokes" />
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.vaithidroid.appone.how2cook.ui.fragments.recipe.bottomsheet.RecipesBottomSheet"
+        android:label="recipes_bottom_sheet"
+        tools:layout="@layout/recipes_bottom_sheet" >
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipeFragment2"
+            app:destination="@id/recipeFragment" />
+    </dialog>
 </navigation>
