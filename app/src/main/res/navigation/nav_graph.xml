@@ -17,6 +17,9 @@
             android:name="backFromBottomSheet"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipeFragment_to_detialsActivity"
+            app:destination="@id/detialsActivity" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFoodFragment"
@@ -37,4 +40,13 @@
             android:id="@+id/action_recipesBottomSheet_to_recipeFragment2"
             app:destination="@id/recipeFragment" />
     </dialog>
+    <activity
+        android:id="@+id/detialsActivity"
+        android:name="com.vaithidroid.appone.how2cook.ui.DetialsActivity"
+        android:label="Detials"
+        tools:layout="@layout/activity_detials" >
+        <argument
+            android:name="result"
+            app:argType="com.vaithidroid.appone.how2cook.models.Result" />
+    </activity>
 </navigation>

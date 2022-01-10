@@ -3,9 +3,9 @@ package com.vaithidroid.appone.how2cook.util
 import androidx.recyclerview.widget.DiffUtil
 import com.vaithidroid.appone.how2cook.models.Result
 
-class RecipeDiffUtil(
-    val oldList: List<Result>,
-    val newList: List<Result>
+class RecipeDiffUtil<T>(
+    val oldList: List<T>,
+    val newList: List<T>
 ) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldList.size

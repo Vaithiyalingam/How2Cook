@@ -1,36 +1,40 @@
 package com.vaithidroid.appone.how2cook.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class Result(
     @SerializedName("aggregateLikes")
-    val aggregateLikes: Int,
+    val aggregateLikes: Int? = null,
     @SerializedName("cheap")
-    val cheap: Boolean,
+    val cheap: Boolean? = null,
     @SerializedName("dairyFree")
-    val dairyFree: Boolean,
+    val dairyFree: Boolean? = null,
     @SerializedName("extendedIngredients")
-    val extendedIngredients: List<ExtendedIngredient>,
+    val extendedIngredients: @RawValue List<ExtendedIngredient?>,
     @SerializedName("glutenFree")
-    val glutenFree: Boolean,
+    val glutenFree: Boolean? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("image")
-    val image: String,
+    val image: String? = null,
     @SerializedName("readyInMinutes")
-    val readyInMinutes: Int,
+    val readyInMinutes: Int? = null,
     @SerializedName("sourceName")
-    val sourceName: String,
+    val sourceName: String? = null,
     @SerializedName("sourceUrl")
-    val sourceUrl: String,
+    val sourceUrl: String? = null,
     @SerializedName("summary")
-    val summary: String,
+    val summary: String? = null,
     @SerializedName("title")
-    val title: String,
+    val title: String? = null,
     @SerializedName("vegan")
-    val vegan: Boolean,
+    val vegan: Boolean? = null,
     @SerializedName("vegetarian")
-    val vegetarian: Boolean,
+    val vegetarian: Boolean? = null,
     @SerializedName("veryHealthy")
-    val veryHealthy: Boolean,
-)
+    val veryHealthy: Boolean? = null,
+): Parcelable

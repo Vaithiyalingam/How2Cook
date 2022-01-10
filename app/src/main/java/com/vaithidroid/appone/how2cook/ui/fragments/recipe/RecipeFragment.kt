@@ -185,7 +185,7 @@ class RecipeFragment : Fragment(), SearchView.OnQueryTextListener {
 
     override fun onResume() {
         super.onResume()
-        setUpRecyclerView()
+//        setUpRecyclerView()
     }
 
     private fun showShimmer(){
