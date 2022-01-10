@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.vaithidroid.appone.how2cook.data.database.RecipesEntity
+import com.vaithidroid.appone.how2cook.data.database.entities.RecipesEntity
 import com.vaithidroid.appone.how2cook.models.FoodRecipe
 import com.vaithidroid.appone.how2cook.util.NetworkResult
 

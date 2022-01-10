@@ -6,7 +6,8 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
 import com.vaithidroid.appone.how2cook.data.Repository
-import com.vaithidroid.appone.how2cook.data.database.RecipesEntity
+import com.vaithidroid.appone.how2cook.data.database.entities.FavoriteEntity
+import com.vaithidroid.appone.how2cook.data.database.entities.RecipesEntity
 import com.vaithidroid.appone.how2cook.models.FoodRecipe
 import com.vaithidroid.appone.how2cook.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,11 +26,27 @@ class MainViewModel @Inject constructor(
 
     /**Room*/
 
-    val readRecipe : LiveData<List<RecipesEntity>> = repository.local.readDatabase().asLiveData()
+    val readRecipe : LiveData<List<RecipesEntity>> = repository.local.readRecipe().asLiveData()
+    val readFavoriteRecipe: LiveData<List<FavoriteEntity>> = repository.local.readFavoriteRecipe().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertRecipes(recipesEntity)
+        }
+
+    fun insertFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.insertFavoriteRecipe(favoriteEntity)
+        }
+
+     fun deleteFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.deleteFavoriteRecipe(favoriteEntity)
+        }
+
+     fun deleteAllFavoriteRecipe() =
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.local.deleteAllFavoriteRecipe()
         }
 
 

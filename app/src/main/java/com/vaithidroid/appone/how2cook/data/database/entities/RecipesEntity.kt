@@ -1,4 +1,4 @@
-package com.vaithidroid.appone.how2cook.data.database
+package com.vaithidroid.appone.how2cook.data.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
