@@ -21,6 +21,7 @@ class Constants {
         const val DATABASE_NAME = "recipes_database"
         const val RECIPES_TABLE = "recipes_table"
         const val FAVOURITE_RECIPE_TABLE = "favourite_recipe_table"
+        const val FOOD_JOKE_TABLE= "food_joke_table"
 
 //        Bottom sheet preference
         const val DEFAULT_RECIPE_NUMBER = "50"

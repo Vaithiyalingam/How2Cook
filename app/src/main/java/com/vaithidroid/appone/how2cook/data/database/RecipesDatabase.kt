@@ -4,10 +4,11 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.vaithidroid.appone.how2cook.data.database.entities.FavoriteEntity
+import com.vaithidroid.appone.how2cook.data.database.entities.FoodJokeEntity
 import com.vaithidroid.appone.how2cook.data.database.entities.RecipesEntity
 
 @Database(
-    entities = [RecipesEntity::class, FavoriteEntity::class],
+    entities = [RecipesEntity::class, FavoriteEntity::class, FoodJokeEntity::class],
     version = 1,
     exportSchema = false
 )

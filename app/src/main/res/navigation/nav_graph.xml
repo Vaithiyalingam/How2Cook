@@ -23,9 +23,13 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFoodFragment"
-        android:name="com.vaithidroid.appone.how2cook.ui.fragments.FavoriteFoodFragment"
+        android:name="com.vaithidroid.appone.how2cook.ui.fragments.FavoriteRecipesFragment"
         android:label="Favorites"
-        tools:layout="@layout/fragment_favorite_food" />
+        tools:layout="@layout/fragment_favorite_recipes" >
+        <action
+            android:id="@+id/action_favoriteFoodFragment_to_detialsActivity"
+            app:destination="@id/detialsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokesFragment"
         android:name="com.vaithidroid.appone.how2cook.ui.fragments.FoodJokesFragment"

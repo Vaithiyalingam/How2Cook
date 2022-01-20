@@ -110,7 +110,6 @@ class DetialsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.yellow)
         showSnackBar("Recipe Saved.")
         recipeSaved = true
-
     }
 
     private fun removeFromFavorites(item: MenuItem) {

@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable-v24/ic_delete.xml" value="0.23703703703703705" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable-v24/ic_error_placeholder.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable-v24/ic_share.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable-v24/ic_splash_screen_light.xml" value="0.23425925925925925" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable/gradient_overlay.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable/ic_checkmark.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/drawable/ic_leaf.xml" value="0.262037037037037" />
@@ -12,6 +15,7 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/font/courgette.xml" value="0.262037037037037" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/activity_detials.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/fragment_favorite_food.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/fragment_food_jokes.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/fragment_ingrediants.xml" value="0.25416666666666665" />
@@ -25,6 +29,9 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/layout/recipes_row_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/details_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/favorite_recipes_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/favorites_contextual_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/food_joke_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/How2Cook/app/src/main/res/menu/recipes_menu.xml" value="0.25416666666666665" />
       </map>
     </option>

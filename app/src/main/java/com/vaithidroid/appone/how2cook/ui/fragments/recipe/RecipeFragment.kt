@@ -86,6 +86,7 @@ class RecipeFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.recyclerview.adapter = mAdapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
         showShimmerEffect()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -194,6 +195,19 @@ class RecipeFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Onresume", "onResume: Resumed ")
+//        requestApiData()
+//        showShimmerEffect()
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Onstart", "onStart: Started ")
     }
 
 
