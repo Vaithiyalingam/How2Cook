@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Parcelable
 import androidx.lifecycle.*
 import com.vaithidroid.appone.how2cook.data.Repository
 import com.vaithidroid.appone.how2cook.data.database.entities.FavoriteEntity
@@ -25,6 +26,7 @@ class MainViewModel @Inject constructor(
     application: Application
 ) : AndroidViewModel(application) {
 
+    var recyclerViewState: Parcelable? = null
 
     /**Room*/
 

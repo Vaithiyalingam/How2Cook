@@ -8,38 +8,44 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vaithidroid.appone.how2cook.R
 import com.vaithidroid.appone.how2cook.adapter.IngredientsAdapter
+import com.vaithidroid.appone.how2cook.databinding.FragmentIngredientsBinding
 import com.vaithidroid.appone.how2cook.models.ExtendedIngredient
 import com.vaithidroid.appone.how2cook.models.Result
 import com.vaithidroid.appone.how2cook.util.Constants
-import kotlinx.android.parcel.RawValue
-import kotlinx.android.synthetic.main.fragment_ingredients.view.*
 
 class IngredientsFragment : Fragment() {
 
     private val ingredientsAdapter: IngredientsAdapter by lazy { IngredientsAdapter() }
+    private var _binding: FragmentIngredientsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_ingredients, container, false)
+        _binding =  FragmentIngredientsBinding.inflate(inflater, container, false)
 
         val args = arguments
         val myBundle: Result? = args?.getParcelable(Constants.RECIPE_RESULT_KEY)
 
-        setUpRecyclerView(view)
+        setUpRecyclerView()
 
         myBundle?.extendedIngredients?.let {
-            ingredientsAdapter.setData(it as @RawValue List<ExtendedIngredient>)
+            ingredientsAdapter.setData(it as  List<ExtendedIngredient>)
         }
 
-        return view
+        return binding.root
     }
 
-    private fun setUpRecyclerView(view: View){
-        view.ingredients_recyclerview.adapter = ingredientsAdapter
-        view.ingredients_recyclerview.layoutManager = LinearLayoutManager(requireContext())
+    private fun setUpRecyclerView(){
+        binding.ingredientsRecyclerview.adapter = ingredientsAdapter
+        binding.ingredientsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

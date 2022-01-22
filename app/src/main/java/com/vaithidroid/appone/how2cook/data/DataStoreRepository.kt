@@ -13,14 +13,16 @@ import com.vaithidroid.appone.how2cook.util.Constants.Companion.PREFERENCE_MEAL_
 import com.vaithidroid.appone.how2cook.util.Constants.Companion.PREFERENCE_MEAL_TYPE_ID
 import com.vaithidroid.appone.how2cook.util.Constants.Companion.PREFERENCE_NAME
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
 
-@ActivityRetainedScoped
+private val Context.dataStore by preferencesDataStore(PREFERENCE_NAME)
+
+@ViewModelScoped
 class DataStoreRepository @Inject constructor(@ApplicationContext private val context: Context) {
 
     private object PreferenceKey{
@@ -31,10 +33,7 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         val backOnline = booleanPreferencesKey(PREFERENCE_BACK_ONLINE)
     }
 
-
-    private val Context.dataStore : DataStore<Preferences> by preferencesDataStore(
-        PREFERENCE_NAME
-    )
+    private val dataStore: DataStore<Preferences> = context.dataStore
 
     suspend fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int){
         context.dataStore.edit {preference ->
@@ -61,13 +60,13 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         }
         .map { preference->
             val selectedMealType = preference[PreferenceKey.selectedMealType] ?: DEFAULT_MEAL_TYPE
-            val selctedMealTypeId = preference[PreferenceKey.selectedMealTypeId] ?: 0
+            val selectedMealTypeId = preference[PreferenceKey.selectedMealTypeId] ?: 0
             val selectedDietType = preference[PreferenceKey.selectedDietType] ?: DEFAULT_DIET_TYPE
             val selectedDietTypeId = preference[PreferenceKey.selectedDietTypeId] ?: 0
 
             MealAndDietType(
                 selectedMealType,
-                selctedMealTypeId,
+                selectedMealTypeId,
                 selectedDietType,
                 selectedDietTypeId
             )

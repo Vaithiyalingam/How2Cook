@@ -6,27 +6,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import com.vaithidroid.appone.how2cook.R
+import com.vaithidroid.appone.how2cook.databinding.FragmentInstructionBinding
 import com.vaithidroid.appone.how2cook.models.Result
 import com.vaithidroid.appone.how2cook.util.Constants.Companion.RECIPE_RESULT_KEY
-import kotlinx.android.synthetic.main.fragment_instruction.view.*
 
 class InstructionFragment : Fragment() {
+
+    private var _binding: FragmentInstructionBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_instruction, container, false)
+        _binding = FragmentInstructionBinding.inflate(inflater, container, false)
 
         val args = arguments
         val myBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
 
-        view.instruction_webview.webViewClient = object : WebViewClient() {}
+        binding.instructionWebview.webViewClient = object : WebViewClient() {}
         val websiteUrl: String = myBundle!!.sourceUrl
-        view.instruction_webview.loadUrl(websiteUrl)
+        binding.instructionWebview.loadUrl(websiteUrl)
 
-        return view
+        return binding.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

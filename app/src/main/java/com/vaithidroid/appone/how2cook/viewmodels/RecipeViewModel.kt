@@ -24,6 +24,8 @@ class RecipeViewModel @Inject constructor (
     private val dataStoreRepository: DataStoreRepository
 ) : AndroidViewModel(application) {
 
+    private lateinit var mealAndDiet: DataStoreRepository.MealAndDietType
+
     private var mealType = DEFAULT_MEAL_TYPE
     private var dietType = DEFAULT_DIET_TYPE
     var networkStatus = false
@@ -32,10 +34,30 @@ class RecipeViewModel @Inject constructor (
     val readMealAndDietType = dataStoreRepository.readMealAndDietType
     val readBackOnline = dataStoreRepository.readBackOnline.asLiveData()
 
-    fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int){
+    fun saveMealAndDietType() =
         viewModelScope.launch(Dispatchers.IO) {
-            dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
+            if (this@RecipeViewModel::mealAndDiet.isInitialized) {
+                dataStoreRepository.saveMealAndDietType(
+                    mealAndDiet.selectedMealType,
+                    mealAndDiet.selectedMealTypeID,
+                    mealAndDiet.selectedDietType,
+                    mealAndDiet.selectedDietTypeId
+                )
+            }
         }
+
+    fun saveMealAndDietTypeTemp(
+        mealType: String,
+        mealTypeId: Int,
+        dietType: String,
+        dietTypeId: Int
+    ) {
+        mealAndDiet = DataStoreRepository.MealAndDietType(
+            mealType,
+            mealTypeId,
+            dietType,
+            dietTypeId
+        )
     }
 
     fun saveBackOnline(backOnline : Boolean) =
